@@ -19,4 +19,23 @@ class BookController extends Controller
         $books = Book::where(['ISBN' => $request->modify_book])->get();
         return view('books.book_modify_detail', compact('books'));
     }
+
+    public function book_modify(Request $request)
+    {
+        $books = Book::where(['ISBN'=>$request->isbn])->get();
+
+         foreach ($books->all() as $book)
+         {
+            $book->name = $request->name;
+            $book->author = $request->author;
+            $book->kind = $request->kind;
+            $book->location = $request->location;
+            $book->repertory = $request->repertory;
+            $book->price = $request->price;
+            $book->intro = $request->intro;
+            $book->save();
+         }
+         
+         return view('admin.student_modify');
+    }
 }

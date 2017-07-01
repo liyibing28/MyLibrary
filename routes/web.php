@@ -30,7 +30,7 @@ Route::post('/student/student_modify_detail', 'StudentController@modify_view');
 Route::post('/student/student_modify', 'StudentController@modify');
 
 Route::post('/book/book_modify_detail', 'BookController@book_modify_view');
-
+Route::post('/book/book_modify', 'BookController@book_modify');
 
 Route::get('/admin/student_modify', 'AdminController@getStudentModifyForm');
 Route::get('/admin/book_modify', 'AdminController@getBookModifyForm');

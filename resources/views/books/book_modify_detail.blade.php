@@ -1,3 +1,18 @@
+@extends('layouts.library')
+
+@section('page_title')
+    <div class="section section-breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" >
+                    <h1>&nbsp&nbsp&nbsp&nbsp&nbsp修改学生信息</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+
 @section('content')
     <div class="section" >
         <div class="container">
@@ -17,20 +32,11 @@
                                 <label for="title"><i class="icon-user"></i><b>编辑书本信息</b></label>
                             </div>
 
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name"><i class="icon-user"></i> <b>书名</b></label>
-                                <input class="form-control" id="name" name="name" type="text">
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-
+                            @foreach ($books->all() as $book)
 
                             <div class="form-group{{ $errors->has('isbn') ? ' has-error' : '' }}">
-                                <label for="isbn"><i class="icon-user"></i> <b>ISBN编号</b></label>
-                                <input class="form-control" id="isbn" name="isbn" type="text">
+                                <label for="isbn"><i class="icon-user"></i> <b>ISBN编号: {{ $book->ISBN }}</b></label>
+                                <input class="form-control" id="isbn" name="isbn" type="text" value="{{ $book->ISBN }}">
                                 @if ($errors->has('isbn'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('isbn') }}</strong>
@@ -38,10 +44,19 @@
                                 @endif
                             </div>
 
+                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                <label for="name"><i class="icon-user"></i> <b>书名</b></label>
+                                <input class="form-control" id="name" name="name" type="text" value="{{ $book->name }}">
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
 
                             <div class="form-group{{ $errors->has('author') ? ' has-error' : '' }}">
                                 <label for="author"><i class="icon-user"></i> <b>作者</b></label>
-                                <input class="form-control" id="author" name="author" type="text">
+                                <input class="form-control" id="author" name="author" type="text" value="{{ $book->author }}">
                                 @if ($errors->has('author'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('author') }}</strong>
@@ -52,7 +67,7 @@
 
                             <div class="form-group{{ $errors->has('repertory') ? ' has-error' : '' }}">
                                 <label for="repertory"><i class="icon-user"></i> <b>数量</b></label>
-                                <input class="form-control" id="repertory" name="repertory" type="text">
+                                <input class="form-control" id="repertory" name="repertory" type="text" value="{{ $book->repertory }}">
                                 @if ($errors->has('repertory'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('repertory') }}</strong>
@@ -63,7 +78,7 @@
 
                             <div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
                                 <label for="location"><i class="icon-user"></i> <b>位置</b></label>
-                                <input class="form-control" id="location" name="location" type="text">
+                                <input class="form-control" id="location" name="location" type="text" value="{{ $book->location }}">
                                 @if ($errors->has('location'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('location') }}</strong>
@@ -74,7 +89,7 @@
 
                             <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
                                 <label for="price"><i class="icon-user"></i> <b>价格</b></label>
-                                <input class="form-control" id="price" name="price" type="text">
+                                <input class="form-control" id="price" name="price" type="text" value="{{ $book->price }}">
                                 @if ($errors->has('price'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('price') }}</strong>
@@ -100,7 +115,7 @@
 
                             <div class="form-group{{ $errors->has('intro') ? ' has-error' : '' }}">
                                 <label for="intro"><i class="icon-lock"></i><b>简介</b></label>
-                                <input class="form-control" id="intro" name="intro" type="text">
+                                <input class="form-control" id="intro" name="intro" type="text" value="{{ $book->intro }}">
                                 @if ($errors->has('intro'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('intro') }}</strong>
@@ -108,19 +123,10 @@
                                 @endif
                             </div>
 
+                            @endforeach
 
                             <div class="form-group">
-                                <label for="image">图片</label>
-                                <input class="file" type="file" name="image">
-                                @if($errors->has('picture_format'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('picture_format') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-
-                            <div class="form-group">
-                                <button type="submit" class="btn pull-right">录入</button>
+                                <button type="submit" class="btn pull-right">确认修改</button>
                                 <div class="clearfix"></div>
                             </div>
                         </form>
