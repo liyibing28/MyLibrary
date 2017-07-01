@@ -45,6 +45,14 @@
                             </td>
                         </tr>
                         <tr>
+                            <td><b>ISBN:</b></td>
+                            <td>
+
+                                {{ $book->ISBN }}
+
+                            </td>
+                        </tr>
+                        <tr>
                             <td><b>价格:</b></td>
                             <td>
 

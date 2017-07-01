@@ -58,7 +58,7 @@
                         </tr>
                         <tr>
                             <td class="job-position">
-                                <a href="{{ url('admin/create') }}">管理图书</a>
+                                <a href="{{ url('/admin/book_modify') }}">管理图书</a>
                             </td>
                         </tr>
                         <tr>

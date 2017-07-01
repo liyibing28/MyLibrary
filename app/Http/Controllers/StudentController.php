@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\Borrow;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,17 +25,32 @@ class StudentController extends Controller
         return view('student.student_detail', compact('borrow_books', 'expire_num'));
     }
 
-    // public function modify_view($account)
-    // {
-    //     $student = Auth::where(['account'=>$account])->get(1);
-    //     return view('student.student_modify', compact('student'));
-    // }
+     public function modify_view(Request $request)
+     {
+         //$student = Auth::where(['account' => $request->student_account])->get(1);
+         //$student = DB::table('users')->where('account', '=', $request->student_account)->get();
+         $student = User::where(['account' => $request->student_account])->get();
+         return view('student.student_modify_detail', compact('student'));
+     }
 
-    // public function modify(Request $request)
-    // {
-    //     $student = Auth:where(['account'=>$request->name])->get(1);
-    //     $student->name = $request->name;
-    //     $student->save();
-    // }
+     public function modify(Request $request)
+     {
+         $student = User::where(['account'=>$request->account])->get();
+
+         foreach ($student->all() as $user)
+         {
+            $user->name = $request->name;
+            $user->password = $request->password;
+            $user->name = $request->name;
+            $user->class = $request->class;
+            $user->speciality = $request->speciality;
+            $user->sex = $request->sex;
+            $user->phone = $request->phone;
+            $user->email = $request->email;
+            $user->save();
+         }
+         
+         return view('admin.student_modify');
+     }
 
 }

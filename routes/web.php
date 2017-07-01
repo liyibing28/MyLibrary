@@ -26,10 +26,14 @@ Route::post('/result', 'SearchController@result');
 
 Route::get('/student_detail', 'StudentController@detail');
 
-//Route::get('/stduent_modify/{account}', 'StudentController@modify_view');
-//Route::post('/student_modify', 'StudentController@modify');
+Route::post('/student/student_modify_detail', 'StudentController@modify_view');
+Route::post('/student/student_modify', 'StudentController@modify');
+
+Route::post('/book/book_modify_detail', 'BookController@book_modify_view');
+
 
 Route::get('/admin/student_modify', 'AdminController@getStudentModifyForm');
+Route::get('/admin/book_modify', 'AdminController@getBookModifyForm');
 
 Route::get('/admin/borrow', 'AdminController@getBorrowForm');
 Route::post('/admin/borrow','AdminController@borrow');

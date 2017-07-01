@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12" >
-                    <h1>&nbsp&nbsp&nbsp&nbsp&nbsp学生信息管理</h1>
+                    <h1>&nbsp&nbsp&nbsp&nbsp&nbsp图书信息管理</h1>
                 </div>
             </div>
         </div>
@@ -24,16 +24,16 @@
                     <div class="contact-form-wrapper">
                         <br>
                         <br>
-                        <form class="form-horizontal" role="form" method="post" action="{{ url('/student/student_modify_detail') }}">
+                        <form class="form-horizontal" role="form" method="post" action="{{ url('/book/book_modify_detail') }}">
                             {{ csrf_field() }}
 
-                            <div class="form-group{{ $errors->has('student_account') ? ' has-error' : '' }}">
-                                <label for="student_account" class="col-sm-3 control-label"><b>学生账号</b></label>
+                            <div class="form-group{{ $errors->has('modify_book') ? ' has-error' : '' }}">
+                                <label for="modify_book" class="col-sm-3 control-label"><b>图书ISBN</b></label>
                                 <div class="col-sm-9">
-                                    <input class="form-control" id="student_account" name="student_account" type="text">
-                                    @if ($errors->has('student_account'))
+                                    <input class="form-control" id="modify_book" name="modify_book" type="text">
+                                    @if ($errors->has('modify_book'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('student_account') }}</strong>
+                                            <strong>{{ $errors->first('modify_book') }}</strong>
                                         </span>
                                     @endif
                                 </div>

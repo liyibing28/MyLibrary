@@ -173,4 +173,8 @@ class AdminController extends Controller
     {
         return view('admin.student_modify');
     }
+    public function getBookModifyForm()
+    {
+        return view('admin.book_modify');
+    }
 }
