@@ -63,7 +63,7 @@
                         </tr>
                         <tr>
                             <td class="job-position">
-                                <a href="{{ url('admin/create') }}">管理人员</a>
+                                <a href="{{ url('/admin/student_modify') }}">管理学生</a>
                             </td>
                         </tr>
                     </table>

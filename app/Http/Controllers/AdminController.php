@@ -167,4 +167,10 @@ class AdminController extends Controller
 
         return redirect()->back()->withInput()->withErrors(['picture_format'=>'picture format error']);
     }
+
+
+    public function getStudentModifyForm()
+    {
+        return view('admin.student_modify');
+    }
 }

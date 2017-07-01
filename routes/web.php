@@ -25,8 +25,11 @@ Route::get('/book_detail/{id}', 'BookController@detail');
 Route::post('/result', 'SearchController@result');
 
 Route::get('/student_detail', 'StudentController@detail');
+
 //Route::get('/stduent_modify/{account}', 'StudentController@modify_view');
 //Route::post('/student_modify', 'StudentController@modify');
+
+Route::get('/admin/student_modify', 'AdminController@getStudentModifyForm');
 
 Route::get('/admin/borrow', 'AdminController@getBorrowForm');
 Route::post('/admin/borrow','AdminController@borrow');
