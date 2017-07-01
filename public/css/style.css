@@ -1,0 +1,63 @@
+body {
+color:#8F4F2C;
+background:url(images/bg.jpg) repeat top left;
+padding:0px;
+font-size:12px;
+
+}
+.form_content{
+width:575px;
+margin:30px auto;
+padding:10px;
+
+}
+.form_title{
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+.formclass{
+
+padding:15px 10px 15px 10px;
+margin:0 0 20px 0;
+}
+.form_title2{
+	padding:5px 5px 5px 5px;
+}
+
+
+
+.inputclass{
+width:300px;
+height:22px;
+margin-left: 100px;
+border: 1px solid #EFC986;
+background-color:#FFF6DF;
+padding:5px 0 0 2px;
+
+}
+
+textarea.inputclass{
+width:300px;
+height:100px;
+margin-left: 100px;
+border: 1px solid #EFC986;
+vertical-align:top;
+}
+
+
+
+
+
+input.submit{
+color:#FFFFFF;
+background-color:#BF9347;
+padding:2px 5px 2px 5px;
+cursor:pointer;
+border:none;
+margin: 10px 260px;
+}
+
+
+
+
+
